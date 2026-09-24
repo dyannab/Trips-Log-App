@@ -1,4 +1,4 @@
-# Trip Logs Application
+# Trips Log Application
  
 ## Overview
  
