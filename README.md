@@ -2,7 +2,7 @@
  
 ## Overview
  
-The Trip Logs Application is a web-based travel management application developed as coursework using ASP.NET, C#, and SQL.
+The Trip Logs Application is a web-based travel management application developed as coursework using ASP.NET, C#, HTML, and SQL.
  
 The application lets users organize and maintain travel information in one place.
  
