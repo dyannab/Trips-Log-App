@@ -28,6 +28,11 @@ The application lets users organize and maintain travel information in one place
  
 This project demonstrates web application development, database management, and object-oriented programming concepts. The application provides a centralized system for tracking travel plans, accommodations, and activities.
 
+WATCH THE LIVE DEMO OF THE APPLICATION HERE:
+https://github.com/user-attachments/assets/769c680f-4802-43cb-9a90-05a7af3e4a1c
+
+
+
 ## Author
  
 D'Yanna Boyce
