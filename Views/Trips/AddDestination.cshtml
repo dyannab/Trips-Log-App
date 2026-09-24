@@ -1,0 +1,44 @@
+﻿@model Trips_Log_App.Models.Trip
+
+
+    <h2> @ViewData["Banner"]</h2>
+
+
+<!-- create form group for Destination, display red warning text when field is null to user -->
+   
+  <form asp-action="AddDestination" method="post">
+      <div class="form-group">
+          <label asp-for="Destination"></label>
+          <input asp-for="Destination" class="form-control" />
+          <span asp-validation-for="Destination" class="text-danger"></span>
+      </div>
+
+
+    <!-- create form group for accommodation, display red warning text when field is null to user -->
+      <div class="form-group">
+          <label asp-for="Accommodation"></label>
+          <input asp-for="Accommodation" class="form-control" />
+            <span asp-validation-for="Accommodation" class="text-danger"></span>
+      </div>
+
+
+    <!-- create form group for Start Date, display red warning text when field is null to user -->
+        <div class="form-group">
+          <label asp-for="StartDate">Start Date</label>
+        <input asp-for="StartDate" type="text" class="form-control" placeholder="MM/DD/YYYY" />
+            <span asp-validation-for="StartDate" class="text-danger"></span>
+            </div>
+
+    <!-- create form group for End Date, display red warning text when field is null to user -->
+        <div class="form-group">
+          <label asp-for="EndDate">End Date</label>
+        <input asp-for="EndDate" type="text" class="form-control" placeholder="MM/DD/YYYY" />
+            <span asp-validation-for="EndDate" class="text-danger"></span>
+		</div>
+
+        <!-- create next button and cancel button -->
+		<button type="submit" class="btn btn-primary">Next</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
+
+        </form>
+

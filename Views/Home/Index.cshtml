@@ -1,0 +1,74 @@
+﻿@using Trips_Log_App.Models
+@model List<Trip>
+@{
+    ViewData["Title"] = "My Trip Log";
+}
+
+<!-- success message displays when users successfully adds a new trip -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            
+    </div>
+}
+
+<!-- create trip table -->
+
+<div class="mb-2">
+    <a class="btn btn-primary" asp-controller="Trips" asp-action="AddDestination">Add New Trip</a>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Accommodations</th>
+            <th>Things To Do</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trip in Model)
+        {
+        <tr>
+            <td>@trip.Destination</td>
+            <td>@trip.StartDate?.ToString("d")</td>
+            <td>@trip.EndDate?.ToString("d")</td>
+            
+
+            <!-- if statement for accommodations column to include phone and email -->
+            
+            
+                <td>
+                    @trip.Accommodation
+                    @if(!string.IsNullOrWhiteSpace(trip.AccommodationPhoneNumber))
+                    {
+                        <div>Phone: @trip.AccommodationPhoneNumber</div>
+                    }
+                    @if(!string.IsNullOrWhiteSpace(trip.AccommodationEmail))
+                    {
+                        <div>Email: @trip.AccommodationEmail</div>
+                    }
+                </td>
+            
+            
+            
+               
+				
+
+
+
+            <td>
+
+        <!-- joins the activities entered by user for simplicity and clarity for Things To Do Column -->
+                @string.Join(", ", new[] { trip.ActivityOne,trip.ActivityTwo, trip.ActivityThree}
+                                .Where(a => !string.IsNullOrWhiteSpace(a)))
+            </td>
+        </tr>
+                }
+    </tbody>
+</table>

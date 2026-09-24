@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header class="p-4 mb-3 bg-light border">
+            <h1>My Trip Log</h1>
+        </header>
+
+        @if (!string.IsNullOrEmpty(ViewBag.SubHeader as string))
+        {
+            <div class="mb-3">
+                <h3>@ViewBag.SubHeader</h3>
+            </div>
+		}
+
+
+        @RenderBody()
+    </div>
+</body>
+</html>

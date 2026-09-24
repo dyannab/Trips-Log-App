@@ -1,0 +1,31 @@
+﻿@model Trips_Log_App.Models.TripActivities
+
+    
+
+   
+
+    <form asp-action="AddThingsToDo" method="post">
+        <div class="form-group">
+            
+            <input asp-for="ActivityOne" class="form-control" />
+            <span asp-validation-for="ActivityOne" class="form-control"></span>
+        </div>
+		
+        <div class="form-group">
+            
+            <input asp-for="ActivityTwo" class="form-control" />
+			<span asp-validation-for="ActivityTwo" class="form-control"></span>
+
+            </div>
+        <div class="form-group">
+            
+            <input asp-for="ActivityThree" class="form-control" />
+            <span asp-validation-for="ActivityThree" class="form-control"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Cancel</a>
+	</form>
+
+
+
+
